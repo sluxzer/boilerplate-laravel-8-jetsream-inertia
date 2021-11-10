@@ -19,7 +19,11 @@ mix.js('resources/js/app.js', 'public/js').vue()
     .webpackConfig(require('./webpack.config'));
 
 mix.browserSync({
-    proxy: process.env.APP_URL
+    proxy: process.env.APP_URL,
+    https: {
+        key: "C:\\Users\\USER\\Documents\\ssl\\localhost.key",
+        cert: "C:\\Users\\USER\\Documents\\ssl\\localhost.crt"
+    }
 });
 
 if (mix.inProduction()) {
